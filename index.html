@@ -8,13 +8,47 @@
     <title>intro-section-with-dropdown-navigation-main</title>
 </head>
 <body>
-    <main>
+    
         <header>
-            <div class="logo">
-                <img src="images/logo.svg" alt="logo">
+            <div class="wrapper">
+                <a class="logo">
+                    <img src="images/logo.svg" alt="logo">
+                </a>
+                <button class="toggle" aria-controls="primary-navigation" aria-expanded="false"><span class="sr-only"></span></button>
+                <div  data-visible = 'false' class="primary-navigation">
+                    <nav>
+                        <div class="foo">
+                            <div class="dropdown">
+                                <li><a href="#">Features</a></li>
+                                <ul role="list" >
+                                    <li class="drop"> <img src="images/icon-todo.svg" alt="icon-todoList"> <a href="#">TodoList</a></li>
+                                    <li class="drop"> <img src="images/icon-calendar.svg" alt="icon-calender"> <a href="#">Calender</a></li>
+                                    <li class="drop"> <img src="images/icon-reminders.svg" alt="icon-reminders"> <a href="#">Reminder</a></li>
+                                    <li class="drop"> <img src="images/icon-planning.svg" alt="icon-planning"> <a href="#">Planning</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <li><a href="#">Company</a></li>
+                                <ul role="list">
+                                    <li class="drop"><a href="#">History</a></li>
+                                    <li class="drop"><a href="#">Our Team</a></li>
+                                    <li class="drop"><a href="#">Blog</a></li>
+                                    
+                                </ul>
+
+                            </div>
+                            
+                            
+                            <li><a href="#">Career</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#"> Login</a></li>
+                            <li><a href="#">Register</a></li>
+                        </div>
+                    </nav>
+                </div>
             </div>
         </header>
-
+        <main>  
         <section>
             <div class="container">
                 <div class="container__content">
