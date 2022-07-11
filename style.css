@@ -35,6 +35,22 @@ ul[role='list'] {
     z-index: 1000;
 }
 
+
+.sr-only {
+    position: absolute; 
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px; 
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap; 
+    border: 0;
+   
+    
+}
+
+
 a {
     text-decoration: none;
 }
@@ -86,23 +102,53 @@ button:hover {
 
 
 @media (max-width: 48em){
+    header {
+    margin: 20px;
+   }
+   
+   .foo {
+        display: flex;
+        flex-direction: column;
+    }
+
+    
+
+    .primary-navigation{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: hsl(0, 0%, 98%);
+        position: fixed;
+        inset: 0 0 0 40%;
+        opacity: .9;
+        padding: min(40vh, 160px) 40px;
+        transform: translateX(100%);
+        transition: transform 350ms ease-out;
+        z-index: 1000;
+    }
+
+    .toggle {
+        aspect-ratio: 1;
+        background-image: url('images/icon-menu.svg');
+        background-repeat: no-repeat;
+        background-color: transparent;
+        position: absolute;
+        right: 30px;
+        top: 8px;
+        width: 32px;
+        z-index: 1000;
+    }
+
+    .primary-navigation[data-visible= 'true']{
+        transform: translateX(0%);
+    }
+    
+    .toggle[aria-expanded='true']{
+      background-image: url('images/icon-close-menu.svg');
+    }
 
     section {
         max-width: 800px;
-    }
-
-    .sr-only {
-        position: absolute; 
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px; 
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap; 
-        border: 0;
-       
-        
     }
 
     .container {
@@ -113,6 +159,7 @@ button:hover {
     }
 
     .images .mobile .hero-mobile{
+        margin-top: 40px;
         width: 100%;
     }
 
@@ -165,7 +212,7 @@ button:hover {
 
 
 
-@media (min-width: 48em){
+@media (min-width: 56em){
     header{
         max-width: 1400px;
         padding-top: 20px;
@@ -182,9 +229,6 @@ button:hover {
     gap: 10px;
     
     }
-
-
- 
 
     section {
         
