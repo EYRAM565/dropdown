@@ -54,6 +54,19 @@ a {
     text-decoration: none;
 }
 
+.arrow::after{
+    content: url('./images/icon-arrow-down.svg');
+    position: absolute;
+    top: 0;
+    padding-left: 4px;
+}
+
+.arrow-up.arrow::after {
+    content: url('./images/icon-arrow-up.svg');
+    position: absolute;
+    top: 0;
+    padding-left: 4px;
+}
 
 h1 {
     color: var(--almostBlack);
@@ -112,6 +125,27 @@ button:hover {
 
     li{
         margin-bottom: 12px;
+    }
+
+    .logo {
+        position: absolute;
+        left: 0;
+        top: 30px;
+    }
+
+
+    .wrapper-bgColor{
+        background-color: hsla(0, 0%, 8%, 0.356);
+        display: flex;
+        /* align-items: stretch; */
+        justify-content: flex-end;
+        height: 100vh;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        width: 100%;
+
     }
 
     .primary-navigation{
