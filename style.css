@@ -129,22 +129,20 @@ button:hover {
 
     .logo {
         position: absolute;
-        left: 0;
+        left: -150%;
+        
         top: 30px;
     }
 
 
     .wrapper-bgColor{
         background-color: hsla(0, 0%, 8%, 0.356);
-        display: flex;
-        /* align-items: stretch; */
-        justify-content: flex-end;
-        height: 100vh;
-        position: absolute;
+        position: fixed;
+        bottom: 0;
         left: 0;
         right: 0;
         top: 0;
-        width: 100%;
+       
 
     }
 
@@ -170,7 +168,7 @@ button:hover {
         background-repeat: no-repeat;
         background-color: transparent;
         position: absolute;
-        right: 30px;
+        right: 20px;
         top: 8px;
         width: 32px;
         z-index: 1000;
@@ -185,7 +183,7 @@ button:hover {
     }
 
     section {
-        max-width: 800px;
+        max-width: 900px;
     }
 
     .container {
@@ -196,11 +194,11 @@ button:hover {
     }
 
     .images .mobile .hero-mobile{
-        margin-top: 40px;
+        margin-top: 60px;
         width: 100%;
     }
 
-    .container__content {
+    .soo {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -250,26 +248,71 @@ button:hover {
 
 
 @media (min-width: 56em){
+    
     header{
-        max-width: 1400px;
+       
         padding-top: 20px;
     }
 
-    nav{
-        width: 300px;
+    .wrapper {
+        display: grid;
+        grid-template-columns: max-content auto ;
+        grid-template-areas: ".logo .primary-navigation";
+        align-items: center;
     }
+
+    .wrapper >* {
+        place-self: start;
+    }
+
+    .logo{
+        grid-area: logo;
+    }
+
+    .primary-navigation{
+        display: flex;
+        
+        grid-area: primary-navigation;
+    }
+
     
-  .wrapper, .foo {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    gap: 10px;
+
+    
+  /* nav {
+    display: grid;
+    grid-template-columns: max-content auto  min-content;
+    grid-template-areas: '.logo .foo  .lr';
+    gap: 20px;
     
     }
 
+    nav > * {
+        place-self: start;
+        display: flex;
+    } */
+
+
+    /* .logo{
+        grid-area: logo;
+        margin-left: auto;
+    }
+
+    .foo {
+        grid-area: foo;
+        gap: 40px;
+    }
+
+    
+
+    .lr {
+       grid-area: lr;
+       gap: 50px;
+    } */
+
     section {
-        
         max-width: 1400px;
+        display: block;
+        margin: 100px auto;
     }
 
     .container {
@@ -277,16 +320,22 @@ button:hover {
         grid-template-columns: max-content  auto;
         grid-template-areas: ".container__content  .images";
         align-items: center;
-        gap: 80px;
+        gap: 40px;
     }
 
     .container__content {
+        grid-area: container__content;
+        /* padding: 0 0 0 70px; */
+        margin-left: auto;
+       
+        
+    }
+
+    .soo{
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        grid-area: container__content;
-        padding: 0 0 0 70px;
-        
+        gap: 30px;
     }
 
     .toggle{
@@ -296,19 +345,20 @@ button:hover {
     .container__content h1 {
         font-size: 4em;
         font-weight: 700;
-        padding: 40px 0 20px 0;
+        
+        
     }
 
     .container__content p {
         line-height: 25px;
-        padding: 20px 0 40px 0;
+        padding-top: 30px;
     }
 
     button {
        border-radius: 12px;
        font-size: 16px;
        font-weight: 500;
-       margin: 50px 0 30px 0;
+       margin-top: 20px; 
        padding: 20px 60px;
        
     }
@@ -316,13 +366,14 @@ button:hover {
     .icons {
         display: flex;
         align-items: center;
-        gap: 20px;
-        margin-top: 100px;
+        gap: 30px;
+        margin-top: 120px;
     }
 
     .images {
         grid-area: images;
-        padding: 40px;
+        
+        
     }
 
     .container > * {
@@ -330,7 +381,7 @@ button:hover {
     }
 
     .desktop .hero-desktop{
-        width: 100%;
+        width: 500px;
     }
 
     .mobile {
