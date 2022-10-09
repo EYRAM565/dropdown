@@ -25,34 +25,54 @@ ul[role='list'] ,li{
 
 a {
     color: var(--mediumGray);
-}
-
-ul[role='list'] {
-    background-color: var(--almostWhite);
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.4);
-    display: none;
-    position: absolute;
-    z-index: 1000;
-}
-
-
-.sr-only {
-    position: absolute; 
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px; 
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap; 
-    border: 0;
-}
-
-
-a {
     text-decoration: none;
 }
+
+
+
+
+.listitem{
+  background-color: lightblue;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  display: none;
+  padding: 10px;
+}
+
+
+.list{
+    cursor: pointer;
+}
+
+.list-only{
+    position: relative;
+    display: none;
+}
+
+.list-only:hover .listitem{
+    display: block;
+    position: absolute;
+}
+
+ 
+.list{
+    cursor: pointer;
+}
+
+.list-only{
+    position: relative;
+    display: block;
+}
+
+.list-only:hover .listitem{
+    display: flex;
+    position: absolute;
+}
+
+
+
+
 
 .arrow::after{
     content: url('./images/icon-arrow-down.svg');
@@ -90,49 +110,101 @@ button:hover {
     font-size: 16px;
 }
 
-.dropdown{
-    display: inline-block;
-    position: relative;
-}
 
-.drop{
-    font-size: .8em;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    padding: 7px;
-    
-}
 
-.dropdown:hover ul {
-    display: block;
-}
 
-.dropdown>ul>li:hover{
-    background-color: rgba(0,0,0,0.04);
+
+
+.register{
+    border: 1px solid #000;
+    border-radius: 10px;   
 }
 
 
-@media (max-width: 56em){
-    header {
-    margin: 20px;
-   }
+
+@media (max-width: 48em){
+  
+
+    .img{
+        padding-left: 14px;
+        padding-top: 20px;
+    }
+
    
-   .foo {
+
+   .sr-only {
+    position: absolute; 
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px; 
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap; 
+    border: 0;
+}
+
+.toggle{
+    background-image: url('./images/icon-menu.svg');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    left: 84%;
+    z-index: 1000;
+}
+
+nav{
+    background-color: hsl(0, 0%, 98%);
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    inset: 0 0 0 40%;
+    padding: 100px 60px;
+    transform: translateX(100%);
+    transition: transform 350ms ease-out;
+}
+
+  
+
+   
+
+   .toggle[aria-expanded='true']{
+    background-image: url('./images/icon-close-menu.svg');
+   }
+
+   nav[data-visible='true']{
+    transform: translate(0%);
+   }
+    
+   .list, .list1 a{
+    margin-bottom: 10px;
+   }
+ 
+    .list1, .far{
         display: flex;
         flex-direction: column;
     }
 
-    li{
-        margin-bottom: 12px;
-    }
+    
+    .far {
+      padding-top: 70px;
+      text-align: center;
 
-    .logo {
-        position: absolute;
-        left: -150%;
-        
-        top: 30px;
+     
     }
+    
+    .register{
+        margin-top: 20px;
+        padding: 8px 0;
+    }
+    
+
+    .desktop{
+        display: none;
+    }
+   
 
 
     .wrapper-bgColor{
@@ -146,56 +218,27 @@ button:hover {
 
     }
 
-    .primary-navigation{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        background-color: hsl(0, 0%, 98%);
-        position: fixed;
-        inset: 0 0 0 40%;
-        opacity: .9;
-        padding: min(40vh, 160px) 40px;
-        transform: translateX(100%);
-        transition: transform 350ms ease-out;
-        
-    }
-
-    
-
-    .toggle {
-        aspect-ratio: 1;
-        background-image: url('images/icon-menu.svg');
-        background-repeat: no-repeat;
-        background-color: transparent;
-        position: absolute;
-        right: 20px;
-        top: 8px;
-        width: 32px;
-        z-index: 1000;
-    }
-
-    .primary-navigation[data-visible= 'true']{
-        transform: translateX(0%);
-    }
-    
-    .toggle[aria-expanded='true']{
-      background-image: url('images/icon-close-menu.svg');
-    }
-
-    section {
+    section{
         max-width: 900px;
     }
 
-    .container {
+
+    .container{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin-top: 60px;
+    }
+
+    .container__content {
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
         justify-content: center;
     }
 
-    .images .mobile .hero-mobile{
-        margin-top: 60px;
-        width: 100%;
+     .hero-mobile{
+        height: auto;
+        width: 400px;
     }
 
     .soo {
@@ -205,6 +248,8 @@ button:hover {
         justify-content: center;
         padding: 20px;
     }
+
+   
 
     .container__content h1 {
         font-size: 2em;
@@ -231,12 +276,14 @@ button:hover {
         align-items: center;
         justify-content: center;
         gap: 20px;
-        max-width: 80px;
+        width: auto;
         margin-top: 20px;
+       
     }
 
     .icons img {
-        width: 80%;
+        height: auto;
+        width: 80px;
     }
 
     .desktop, br{
@@ -247,95 +294,86 @@ button:hover {
 
 
 
-@media (min-width: 56em){
+@media (min-width: 48em){
+  header {
     
-    header{
-       
-        padding-top: 20px;
-    }
-
-    .wrapper {
-        display: grid;
-        grid-template-columns: max-content auto ;
-        grid-template-areas: ".logo .primary-navigation";
-        align-items: center;
-    }
-
-    .wrapper >* {
-        place-self: start;
-    }
-
-    .logo{
-        grid-area: logo;
-    }
-
-    .primary-navigation{
-        display: flex;
-        
-        grid-area: primary-navigation;
-    }
-
+    margin-top: 6px;
+    padding: 15px 0;
+    padding-left: 20px;
+    max-width: 1200px;
+  }
     
+ 
 
+  header, nav{
+    display: flex;
+    gap: 30px;
     
-  /* nav {
+ }
+
+.list1{
+    display: flex;
+}
+
+
+.list1 a{
+    margin-right: 30px;
+}
+
+.far{
+    display: flex;  
+    margin-left: 500px;
+    position: relative;
+}
+
+.register {
+    padding: 8px 10px;
+    position: absolute;
+    left: 70px;
+    top: -10px;
+}
+
+.toggle{
+    display: none;
+}
+
+  
+
+
+.container {
     display: grid;
-    grid-template-columns: max-content auto  min-content;
-    grid-template-areas: '.logo .foo  .lr';
-    gap: 20px;
-    
-    }
-
-    nav > * {
-        place-self: start;
-        display: flex;
-    } */
-
-
-    /* .logo{
-        grid-area: logo;
-        margin-left: auto;
-    }
-
-    .foo {
-        grid-area: foo;
-        gap: 40px;
-    }
-
-    
-
-    .lr {
-       grid-area: lr;
-       gap: 50px;
-    } */
-
-    section {
-        max-width: 1400px;
-        display: block;
-        margin: 100px auto;
-    }
-
-    .container {
-        display: grid;
-        grid-template-columns: max-content  auto;
-        grid-template-areas: ".container__content  .images";
-        align-items: center;
-        gap: 40px;
-    }
-
-    .container__content {
-        grid-area: container__content;
-        /* padding: 0 0 0 70px; */
-        margin-left: auto;
-       
+    grid-template-columns: repeat(1, 1fr);
+    gap: 50px;
+    margin: 30px 50px;
         
+}
+
+
+
+
+
+
+    
+
+    .container__content {   
+       display: flex;
+        align-items: center;
+       justify-content: center;
+       max-width: 1200px;
+        position: relative;    
+    }
+
+    .container__content > * {
+       
+        flex: 1;
     }
 
     .soo{
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 30px;
+        
+        
     }
 
     .toggle{
@@ -358,30 +396,37 @@ button:hover {
        border-radius: 12px;
        font-size: 16px;
        font-weight: 500;
-       margin-top: 20px; 
+       margin-top: 50px; 
        padding: 20px 60px;
        
     }
 
     .icons {
+        
         display: flex;
-        align-items: center;
-        gap: 30px;
-        margin-top: 120px;
+        align-items: flex-start;
+        gap: 25px;
+        position: absolute;
+        inset: 93% 0 0 0;
     }
 
-    .images {
-        grid-area: images;
-        
-        
+    
+
+     .icons img{
+        height: auto;
+        width: 90px;
+    }
+    
+
+    .desktop{
+        width: auto;
+        padding: 30px;
     }
 
-    .container > * {
-        align-self: center;
-    }
-
-    .desktop .hero-desktop{
-        width: 500px;
+    .hero-desktop{
+        height: auto;
+        object-fit: contain;
+        width: 100%;
     }
 
     .mobile {

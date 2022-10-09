@@ -8,54 +8,44 @@
     <title>intro-section-with-dropdown-navigation-main</title>
 </head>
 <body>
-     
-        <header>
-            <button class="toggle" aria-controls="primary-navigation" aria-expanded="false"><span class="sr-only"></span></button>
-            <div class="wrapper">
-                <a class="logo">
-                    <img src="images/logo.svg" alt="logo">
-                </a>
-                
-                <div  data-visible="false" class="primary-navigation">
-                    <nav>
-                        
-                        <div class="foo">
-                            <div class="dropdown">
-                                <li ><a class="arrow" href="#">Features</a></li>
-                                <ul role="list" >
-                                    <li class="drop"> <img src="images/icon-todo.svg" alt="icon-todoList"> <a href="#">TodoList</a></li>
-                                    <li class="drop"> <img src="images/icon-calendar.svg" alt="icon-calender"> <a href="#">Calender</a></li>
-                                    <li class="drop"> <img src="images/icon-reminders.svg" alt="icon-reminders"> <a href="#">Reminder</a></li>
-                                    <li class="drop"> <img src="images/icon-planning.svg" alt="icon-planning"> <a href="#">Planning</a></li>
-                                </ul>
-                            </div>
-                            <div class="dropdown">
-                                <li ><a class="arrow" href="#">Company</a></li>
-                                <ul role="list">
-                                    <li class="drop"><a href="#">History</a></li>
-                                    <li class="drop"><a href="#">Our Team</a></li>
-                                    <li class="drop"><a href="#">Blog</a></li>
-                                    
-                                </ul>
-
-                            </div>
-                            
-                            
-                            <li><a href="#">Career</a></li>
-                            <li><a href="#">About</a></li>
-                        </div>
-                       
-                        <div class="lr">
-                            <li><a href="#"> Login</a></li>
-                            <li><a href="#">Register</a></li> 
-                        </div>
-                    </nav>
-                    
-                    
-                </div>
-                
+    <header>
+        <button class="toggle" aria-controls="nav" aria-expanded="false"> <span class="sr-only">Menu</span></button>
+        <div class="image"><img class="img" src="images/logo.svg" alt="logo"></div>
+    
+        
+    <nav data-visible="false">
+        <div class="list list-only" role="list">Features
+           <div class="listitem">
+            <div class="drop">
+            <div class="droplist"><img src="images/icon-todo.svg" alt="todoList icon">TodoList</div>
+            <div class="droplist"><img src="images/icon-calendar.svg" alt="calender icon">Calender</div>
+            <div class="droplist"><img src="images/icon-reminders.svg" alt="reminder icon">Reminder</div>
+            <div class="droplist"><img src="images/icon-planning.svg" alt="planning icon">Planning</div>
             </div>
-        </header>
+           </div>
+        </div>
+        <div class="list list-only" role="list">Company
+            <div class="listitem">
+               <div class="drop">
+                <div class="droplist">History</div>
+                <div class="droplist">Our Team</div>
+                <div class="droplist">Blog</div>
+               </div>
+            </div>
+        </div>
+        <div class="list1">
+            <a href="#">Career</a>
+            <a href="#">About</a>
+        </div>
+        <div class="far">
+            <a href="#">Login</a>
+            <a class='register' href="#">Register</a>
+        </div>
+    </nav>
+    
+    
+    
+       </header>
         <main> 
         <section>
             <div class="container">
@@ -74,16 +64,13 @@
                        <img src="images/client-maker.svg" alt="client-maker">
                    </div>
                     </div>
-                     
-            </div>
-                <div class="images">
                  <div class="desktop">
                     <img src="images/image-hero-desktop.png" alt="image-hero-desktop" class="hero-desktop">
                  </div>
                  <div class="mobile">
                     <img src="./images/image-hero-mobile.png" alt="image-hero-mobile" class="hero-mobile">
-                 </div>
-                </div>
+                 </div>  
+            </div>
             </div>
         </section>
     </main>
