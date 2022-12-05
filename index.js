@@ -29,13 +29,15 @@
 
 const toggle = document.querySelector('.toggle');
 const navigation = document.querySelector('nav');
-let bgwrapper = document.querySelector('header');
+const bgwrapper = document.querySelector('header');
+
+ 
+
 
 toggle.addEventListener('click', ()=>{
-    console.log('testing.... testing!!!!');
     const visibility = navigation.getAttribute('data-visible')
     if(visibility === 'false'){
-      bgwrapper.classList.add('wrapper-bgColor')
+        bgwrapper.classList.add('wrapper-bgColor')
         navigation.setAttribute('data-visible', true)
         toggle.setAttribute('aria-expanded', true)
     }else {
