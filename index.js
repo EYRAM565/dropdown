@@ -30,7 +30,10 @@
 const toggle = document.querySelector('.toggle');
 const navigation = document.querySelector('nav');
 const bgwrapper = document.querySelector('header');
-
+const arrow = document.querySelector('.arrow')
+const arrow_up = document.querySelector('.arrow_up')
+const arrow1 = document.querySelector('.arrow1')
+const arrow_up1 = document.querySelector('.arrow_up1')
  
 
 
@@ -45,4 +48,15 @@ toggle.addEventListener('click', ()=>{
         navigation.setAttribute('data-visible', false)
         toggle.setAttribute('aria-expanded', false)
     }
+})
+
+arrow.addEventListener('click', ()=>{
+    arrow_up.style.display = 'block';
+    arrow.style.display = 'none';
+    console.log('testing!!!');
+})
+
+arrow1.addEventListener('click', ()=>{
+    arrow_up1.style.display = 'block';
+    arrow1.style.display = 'none';
 })
